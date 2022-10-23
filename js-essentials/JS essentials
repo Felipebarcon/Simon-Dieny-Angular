@@ -1,0 +1,92 @@
+//*************************************
+//*************************************
+// PRIMITIVES
+
+3
+3.14
+
+'Hello, JavaScript 👋'
+
+true
+false
+
+null
+undefined
+
+//*************************************
+//*************************************
+// NON PRIMITIVES
+
+const arr = [1, 2, 3];
+arr
+
+const user = { firstName: 'John', lastName: 'Doe'};
+user
+
+//*************************************
+//*************************************
+// OPERATORS
+
+// + est un opérateur binaire : addition
+
+3 + 3.14;
+
+// + est un opérateur binaire : concaténation
+
+'Hello, ' + 'World';
+
+3 + '000';
+
+// + est un opérateur unaire : évaluer une valeur en tant que nombre
+
++'300';
+
+!true;
+!false;
+
+//*************************************
+//*************************************
+// TYPE
+
+typeof(3);
+typeof(3.14);
+
+typeof 'Hello';
+
+typeof(true);
+
+typeof(undefined);
+typeof(null);
+
+typeof([1, 2, 3]);
+typeof({name: 'John'});
+
+
+typeof function() {};
+
+
+//*************************************
+//*************************************
+// Exercices
+
+const a = 1;
+const b = '1';
+
+console.log(a + b);
+console.log(a + a);
+console.log(b + b);
+
+
+console.log(!a);
+console.log(!b);
+console.log(+a);
+console.log(+b);
+
+console.log(typeof(a + b));
+console.log(typeof(a + a));
+console.log(typeof(b + b));
+
+console.log(typeof(!a));
+console.log(typeof(!b));
+console.log(typeof(+a));
+console.log(typeof(+b));
