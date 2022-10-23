@@ -90,3 +90,107 @@ console.log(typeof(!a));
 console.log(typeof(!b));
 console.log(typeof(+a));
 console.log(typeof(+b));
+
+//*************************************
+//*************************************
+// NaN ==> Not a valid Numerical operation
+
+const greeting = 'Hello World';
+
+const nan = greeting / 2;
+
+nan;
+
+typeof nan
+
+nan == nan;
+nan === nan;
+
+// tester si une valeur est égale à NaN
+Number.isNaN(greeting);
+Number.isNaN(nan);
+
+//*************************************
+//*************************************
+// BOOLEAN FALSY VALUES
+
+// Toutes les valeurs sont évaluées à Truthy sauf celles appartenant à la liste Falsy: ⤵️
+
+"";
+0;
+-0;
+null;
+false;
+undefined;
+NaN;
+
+!""; // '' => !'' => !false => true
+
+// savoir si une valeur est fausse
+!!''; // <=> Bolean('') => false
+
+!!0;
+!!-0;
+!!null;
+!!false;
+!!undefined;
+!!NaN;
+
+//*************************************
+//*************************************
+// CONDITIONS
+
+const input = { value: 'test'}
+
+if(!!input.value) {
+  console.log(input.value)
+}
+
+const customers = ['John', 'Jack', 'Davis'];
+
+while(customers.length > 0) { // number => boolean
+  let customer = customers.shift()
+  console.log(customer)
+}
+
+
+//*************************************
+//*************************************
+// QUAND UTILISER LA CONVERSION IMPLICITE
+
+const ageMajorityFr = 18;
+const ageMajorityUs = '21'
+
+if(Number(ageMajorityFr) < Number(ageMajorityUs)) {
+  console.log('Ok')
+}
+
+if(+ageMajorityFr < +ageMajorityUs) {
+  console.log('Ok')
+}
+
+if(ageMajorityFr < ageMajorityUs) {
+  console.log('Ok')
+}
+
+18 < '21'
+
+//*************************************
+//*************************************
+// LES OPERATEURS DE COMPARAISON
+
+const age = 18;
+const age2 = age + 0;
+const ageStr = '18';
+
+age == age2;
+age === age2;
+
+age == ageStr;
+age === ageStr;
+
+age == +ageStr;
+age === +ageStr;
+
+
+
