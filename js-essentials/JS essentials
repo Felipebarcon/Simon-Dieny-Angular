@@ -192,5 +192,61 @@ age === ageStr;
 age == +ageStr;
 age === +ageStr;
 
+//*************************************
+//*************************************
+// UTILISER == CORRECTEMENT
+
+const john = { skill: null };
+const jack = {};
+
+if((john.skill === null || jack.skill === null) && 
+   (john.skill === undefined || jack.skill === undefined)) {
+  console.log('No skills in the team')
+}
+
+if(john.skill == null && jack.skill == null) {
+  console.log('No skills in the team')
+}
+
+
+//*************************************
+//*************************************
+// LES FONCTIONS
+
+const sum = function (a, b) {
+  return a + b
+};
+
+function substract(a, b) {
+  return a -b
+};
+
+sum(1,2);
+
+substract(2, 1);
+
+if(true) { // Scope local => fonction sum n'est pas disponible
+  sum(1, 2)
+  substract(2, 1)
+}
+
+//*************************************
+//*************************************
+// EXERCICES
+
+const users = [
+  { name: 'Joe', skills: ['web dev', 'mobile dev'] },
+  { name: 'John', skills: '' }
+];
+
+function usersWithSkill(skill) {
+  users.filter(function(user) {
+    user.skills.includes(skill)
+  })
+}
+
+usersWithSkill('web dev');
+
+
 
 
