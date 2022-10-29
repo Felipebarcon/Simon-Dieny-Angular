@@ -236,17 +236,75 @@ if(true) { // Scope local => fonction sum n'est pas disponible
 
 const users = [
   { name: 'Joe', skills: ['web dev', 'mobile dev'] },
-  { name: 'John', skills: '' }
+  { name: 'John', skills: null }
 ];
 
-function usersWithSkill(skill) {
-  users.filter(function(user) {
-    user.skills.includes(skill)
+function usersWithSkill(users, skill) {
+  return users.filter(function(user) {
+    return !!user.skills && user.skills.includes(skill)
   })
 }
 
-usersWithSkill('web dev');
+usersWithSkill(users, 'web dev');
 
 
+
+//*************************************
+//*************************************
+// PARCOURIR UN TABLEAU
+
+const numbers = [1, 2, 3, 4, 5];
+let numbersX2 = [];
+let numbersStr = [];
+
+
+// 🚫 utilise une variable intermédiaire
+// 🚫 effet de bord avec l'extérieur
+// 🚫 traitement global supérieur à 1 ligne
+// 🚫 pas de valeur de retour
+
+// for(let i = 0; i < numbers.length; i++) {
+//   numbersX2.push(numbers[i] * 2)
+// }
+
+// ✅ utilise une variable intermédiaire
+// 🚫 effet de bord avec l'extérieur
+// 🚫 traitement global supérieur à 1 ligne
+// 🚫 pas de valeur de retour
+
+// for(const number of numbers) {
+//   numbersX2.push(number * 2 )
+// }
+
+// ✅ utilise une variable intermédiaire
+// ✅ effet de bord avec l'extérieur
+// ✅ traitement global supérieur à 1 ligne
+// 🚫 pas de valeur de retour
+
+// numbers.forEach(function(number) {
+//   numbersX2.push(number * 2)
+// })
+
+// ✅ utilise une variable intermédiaire
+// ✅ effet de bord avec l'extérieur
+// ✅ traitement global supérieur à 1 ligne
+// ✅ pas de valeur de retour
+
+numbersX2 = numbers.map(n => n * 2)
+numbersStr = numbers.map(n => n.toString())
+
+//*************************************
+//*************************************
+// ASYNCHRONE
+
+const getUserData = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve({ name: 'Joe'})
+  }, 100)
+})
+
+getUserData.then(function(user) {
+  console.log(user)
+})
 
 
